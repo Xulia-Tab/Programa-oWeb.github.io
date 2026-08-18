@@ -1,0 +1,16 @@
+PROJETO ATIVIDADE PROGRAMAÇÃO WEB
+
+1. Todos os estilos foram reunidos em:
+   css/main.css
+
+2. Os arquivos HTML e PHP foram ajustados para usar caminhos relativos.
+   Assim, as páginas HTML podem ser abertas a partir da pasta do projeto.
+
+3. Para executar a atividade em PHP, abra um terminal nesta pasta e use:
+   php -S localhost:8000
+
+   Depois, acesse no navegador:
+   http://localhost:8000/atividade10php/index.php
+
+4. A página inicial do projeto é:
+   Index.html

@@ -1,0 +1,745 @@
+/* =========================================================
+   ARQUIVO CSS ÚNICO DO PROJETO
+   ========================================================= */
+
+:root {
+    --rosa-principal: #ff72ab;
+    --rosa-escuro: #d83074;
+    --rosa-borda: #ff5599;
+    --rosa-hover: #ff4e95;
+    --rosa-claro: #ffd5e6;
+    --rosa-muito-claro: #ffecf4;
+    --rosa-cartao: #ffeaf2;
+    --branco: #ffffff;
+    --preto: #1f1720;
+    --sombra: 0 8px 22px rgba(216, 48, 116, 0.18);
+    --raio: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--rosa-muito-claro);
+    color: var(--preto);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+a {
+    color: var(--rosa-escuro);
+}
+
+/* =========================================================
+   CABEÇALHO, NAVEGAÇÃO E RODAPÉ COMPARTILHADOS
+   ========================================================= */
+
+#cabecalho-principal {
+    width: 100%;
+    min-height: 100px;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background: linear-gradient(135deg, var(--rosa-principal), #ffb4d2);
+    color: var(--branco);
+    text-align: center;
+}
+
+#cabecalho-principal img {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+}
+
+#cabecalho-principal h1 {
+    margin: 0;
+    color: var(--branco);
+    font-family: "Times New Roman", Times, serif;
+    font-size: clamp(1.7rem, 4vw, 2.8rem);
+    line-height: 1.15;
+}
+
+.subtitulo-cabecalho {
+    margin-bottom: 3px;
+    color: var(--branco);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+nav.navbar,
+.menu-principal {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 8px 18px;
+    background-color: var(--rosa-principal);
+    border-top: 2px solid var(--rosa-borda);
+    border-bottom: 2px solid var(--rosa-borda);
+    box-shadow: 0 3px 10px rgba(255, 95, 159, 0.28);
+}
+
+.menu-principal > ul {
+    width: 100%;
+    max-width: 1150px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    list-style: none;
+}
+
+.menu-principal li {
+    display: flex;
+}
+
+nav.navbar a,
+.menu-principal a {
+    display: inline-block;
+    padding: 9px 13px;
+    border-radius: 7px;
+    color: var(--branco);
+    font-family: "Times New Roman", Times, serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+nav.navbar a:hover,
+nav.navbar a:focus,
+.menu-principal a:hover,
+.menu-principal a:focus,
+nav.navbar a[aria-current="page"] {
+    background-color: var(--rosa-hover);
+    color: var(--preto);
+    outline: none;
+    transform: translateY(-1px);
+}
+
+main {
+    flex: 1;
+}
+
+footer,
+#rodape {
+    width: 100%;
+    margin-top: auto;
+    padding: 14px 20px;
+    background-color: var(--rosa-principal);
+    color: var(--branco);
+    text-align: center;
+}
+
+/* =========================================================
+   BOTÕES, FORMULÁRIOS E TABELAS COMPARTILHADOS
+   ========================================================= */
+
+.btn-atv,
+.btn-atv1,
+.btn-voltar,
+button[type="submit"],
+.pagina-js button {
+    display: inline-block;
+    padding: 11px 20px;
+    background-color: var(--rosa-principal);
+    color: var(--branco);
+    border: 0;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-atv:hover,
+.btn-atv1:hover,
+.btn-voltar:hover,
+button[type="submit"]:hover,
+.pagina-js button:hover {
+    background-color: var(--rosa-hover);
+    color: var(--branco);
+    transform: translateY(-2px);
+}
+
+form {
+    display: grid;
+    gap: 16px;
+}
+
+form > div,
+.form-group {
+    display: grid;
+    gap: 6px;
+}
+
+label {
+    font-weight: 700;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    background-color: var(--branco);
+    color: var(--preto);
+    border: 1px solid #c98aa4;
+    border-radius: 7px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--rosa-hover);
+    outline: 3px solid rgba(255, 78, 149, 0.18);
+}
+
+textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    background-color: var(--branco);
+    border-radius: 8px;
+}
+
+th,
+td {
+    padding: 11px 14px;
+    border: 1px solid #efb1ca;
+    text-align: left;
+}
+
+th {
+    background-color: var(--rosa-principal);
+    color: var(--branco);
+}
+
+tbody tr:nth-child(even) {
+    background-color: #fff4f8;
+}
+
+/* =========================================================
+   PÁGINAS PRINCIPAIS: INDEX E LISTA DE ATIVIDADES
+   ========================================================= */
+
+.pagina-principal main {
+    width: min(1120px, calc(100% - 32px));
+    margin: 28px auto;
+}
+
+.pagina-principal main > section {
+    scroll-margin-top: 78px;
+    width: 100%;
+    margin-bottom: 22px;
+    padding: 20px;
+    background-color: var(--rosa-claro);
+    border: 2px solid var(--rosa-borda);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+}
+
+.pagina-principal article {
+    width: 100%;
+    padding: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    background-color: var(--rosa-cartao);
+    border-left: 5px solid var(--rosa-principal);
+    border-radius: 9px;
+    text-align: left;
+}
+
+.pagina-principal article + article {
+    margin-top: 16px;
+}
+
+.pagina-principal article h3 {
+    color: var(--rosa-escuro);
+    font-size: 1.25rem;
+}
+
+.pagina-principal article p {
+    flex-basis: 100%;
+}
+
+.pagina-principal article .imagem {
+    display: flex;
+    align-items: center;
+}
+
+.pagina-principal article .imagem img {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.pagina-principal article > a:not(.btn-atv):not(.btn-atv1) {
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.pagina-principal article > a:not(.btn-atv):not(.btn-atv1):hover {
+    text-decoration: underline;
+}
+
+/* =========================================================
+   ATIVIDADE 1: CURRÍCULO, EXPERIÊNCIA E CONTATO
+   ========================================================= */
+
+.pagina-atividade1 .pagina-conteudo {
+    width: min(900px, calc(100% - 32px));
+    margin: 28px auto;
+}
+
+.pagina-atividade1 .pagina-conteudo > section,
+.pagina-atividade1 .pagina-conteudo > form {
+    scroll-margin-top: 78px;
+    margin-bottom: 20px;
+    padding: 22px;
+    background-color: var(--rosa-cartao);
+    border: 1px solid var(--rosa-borda);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+}
+
+.pagina-atividade1 #perfil {
+    text-align: center;
+}
+
+.pagina-atividade1 #perfil > img {
+    width: 150px;
+    height: 190px;
+    margin: 10px 0;
+    object-fit: cover;
+    border: 4px solid var(--branco);
+    border-radius: 12px;
+    box-shadow: var(--sombra);
+}
+
+.pagina-atividade1 h2,
+.pagina-atividade1 h3 {
+    color: var(--rosa-escuro);
+}
+
+.pagina-atividade1 .formulario-contato {
+    max-width: 650px;
+    margin-inline: auto;
+}
+
+/* =========================================================
+   ATIVIDADE CSS: COISAS QUE EU GOSTO
+   ========================================================= */
+
+.pagina-coisas #cabecalho-principal {
+    min-height: 220px;
+    gap: 22px;
+    padding: 32px 20px;
+    text-align: left;
+}
+
+.pagina-coisas #cabecalho-principal img {
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    background-color: var(--branco);
+    border: 3px solid var(--rosa-hover);
+    border-radius: 50%;
+    box-shadow: var(--sombra);
+}
+
+.pagina-coisas .conteudo-principal {
+    width: min(1100px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 42px 0;
+}
+
+.pagina-coisas .secao {
+    scroll-margin-top: 85px;
+    margin-bottom: 42px;
+    padding: 24px;
+    background-color: var(--rosa-claro);
+    border: 2px solid var(--rosa-borda);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+}
+
+.pagina-coisas .secao > h2 {
+    margin-bottom: 22px;
+    padding-bottom: 8px;
+    color: var(--rosa-escuro);
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    border-bottom: 3px solid var(--rosa-principal);
+}
+
+.pagina-coisas .grade-artigos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.pagina-coisas .cartao {
+    padding: 22px;
+    background-color: var(--rosa-cartao);
+    border: 1px solid var(--rosa-borda);
+    border-left: 5px solid var(--rosa-principal);
+    border-radius: var(--raio);
+    box-shadow: 0 6px 14px rgba(255, 95, 159, 0.22);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pagina-coisas .cartao:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(255, 95, 159, 0.34);
+}
+
+.pagina-coisas .cartao h3 {
+    margin-bottom: 10px;
+    color: var(--rosa-hover);
+}
+
+.pagina-coisas .cartao p {
+    text-align: justify;
+}
+
+.pagina-coisas .cartao p + p {
+    margin-top: 12px;
+}
+
+/* =========================================================
+   ATIVIDADE DE CAIXAS
+   ========================================================= */
+
+.pagina-caixas .conteudo-caixas {
+    width: min(1300px, calc(100% - 24px));
+    margin: 24px auto;
+}
+
+.pagina-caixas .instrucoes {
+    margin-bottom: 16px;
+    padding: 18px;
+    background-color: var(--rosa-cartao);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+}
+
+.pagina-caixas .grade-caixas::after {
+    display: block;
+    clear: both;
+    content: "";
+}
+
+.pagina-caixas .caixa {
+    float: left;
+    max-width: calc(100% - 10px);
+    margin: 5px;
+    padding: 14px;
+    background: linear-gradient(145deg, var(--rosa-cartao), #ffd0e3);
+    border: 2px solid var(--rosa-borda);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(216, 48, 116, 0.12);
+}
+
+.pagina-caixas .caixa strong {
+    color: var(--rosa-escuro);
+}
+
+.pagina-caixas #caixa1 { width: 500px; height: 450px; }
+.pagina-caixas #caixa2 { width: 400px; height: 350px; }
+.pagina-caixas #caixa3 { width: 700px; height: 500px; }
+.pagina-caixas #caixa4,
+.pagina-caixas #caixa5,
+.pagina-caixas #caixa6,
+.pagina-caixas #caixa7 { width: 400px; height: 150px; }
+.pagina-caixas #caixa8 { width: 600px; height: 200px; }
+.pagina-caixas #caixa9 { width: 600px; height: 150px; }
+
+/* =========================================================
+   ATIVIDADE DE RESPONSIVIDADE
+   ========================================================= */
+
+.pagina-responsiva .painel-responsivo {
+    width: min(900px, calc(100% - 32px));
+    margin: 30px auto;
+    padding: 24px;
+    background-color: var(--rosa-cartao);
+    border: 1px solid var(--rosa-borda);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+}
+
+.pagina-responsiva .campo-email {
+    max-width: 500px;
+    margin: 20px 0;
+}
+
+.pagina-responsiva .imagens-responsivas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.pagina-responsiva .imagens-responsivas img {
+    flex: 1 1 260px;
+    width: 100%;
+    min-width: 0;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+}
+
+/* =========================================================
+   JULINHAFLIX: FILMES, SÉRIES, DESENHOS E LOGIN
+   ========================================================= */
+
+.pagina-catalogo .container {
+    width: min(1200px, calc(100% - 32px));
+    margin: 30px auto;
+}
+
+.pagina-catalogo .container > h1,
+.pagina-catalogo .login-container > h1 {
+    margin-bottom: 22px;
+    color: var(--rosa-escuro);
+    text-align: center;
+}
+
+.pagina-catalogo .media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 22px;
+}
+
+.pagina-catalogo .card {
+    padding: 15px;
+    background-color: var(--rosa-cartao);
+    border: 1px solid transparent;
+    border-radius: var(--raio);
+    box-shadow: 0 5px 13px rgba(216, 48, 116, 0.22);
+    text-align: justify;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.pagina-catalogo .card:hover {
+    z-index: 2;
+    transform: translateY(-5px);
+    border-color: var(--rosa-borda);
+    box-shadow: 0 12px 24px rgba(216, 48, 116, 0.28);
+}
+
+.pagina-catalogo .card img {
+    width: 100%;
+    height: 410px;
+    margin-bottom: 12px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.pagina-catalogo .card h3 {
+    margin-bottom: 4px;
+    color: var(--preto);
+    font-size: 1.15rem;
+    text-align: left;
+}
+
+.pagina-catalogo .card h4 {
+    margin-bottom: 10px;
+    color: var(--rosa-escuro);
+}
+
+.pagina-catalogo .login-container {
+    width: min(420px, calc(100% - 32px));
+    margin: 60px auto;
+    padding: 34px;
+    background-color: var(--rosa-cartao);
+    border: 1px solid var(--rosa-borda);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+}
+
+.pagina-catalogo .login-form {
+    display: grid;
+    gap: 16px;
+}
+
+/* =========================================================
+   ATIVIDADES DE JAVASCRIPT
+   ========================================================= */
+
+.pagina-js .painel-js {
+    width: min(650px, calc(100% - 32px));
+    margin: 50px auto;
+    padding: 28px;
+    background-color: var(--rosa-cartao);
+    border: 1px solid var(--rosa-borda);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+    text-align: center;
+}
+
+.pagina-js .painel-js h1 {
+    margin-bottom: 12px;
+    color: var(--rosa-escuro);
+}
+
+.pagina-js .painel-js p,
+.pagina-js .painel-js button {
+    margin-bottom: 18px;
+}
+
+/* =========================================================
+   ATIVIDADE PHP
+   ========================================================= */
+
+.pagina-php .php-container {
+    width: min(950px, calc(100% - 32px));
+    margin: 28px auto;
+}
+
+.pagina-php .php-container > section {
+    margin-bottom: 22px;
+    padding: 22px;
+    background-color: var(--rosa-cartao);
+    border: 1px solid var(--rosa-borda);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+}
+
+.pagina-php .php-container h2 {
+    margin-bottom: 10px;
+    color: var(--rosa-escuro);
+}
+
+.pagina-php .numeros {
+    margin-top: 12px;
+    padding: 14px;
+    background-color: var(--branco);
+    border: 1px solid #efb1ca;
+    border-radius: 8px;
+    line-height: 2;
+    word-break: break-word;
+}
+
+/* =========================================================
+   RESPONSIVIDADE GERAL
+   ========================================================= */
+
+@media (max-width: 850px) {
+    .pagina-coisas .grade-artigos {
+        grid-template-columns: 1fr;
+    }
+
+    .pagina-catalogo .card img {
+        height: 370px;
+    }
+}
+
+@media (max-width: 700px) {
+    #cabecalho-principal,
+    .pagina-coisas #cabecalho-principal {
+        min-height: auto;
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px 15px;
+        text-align: center;
+    }
+
+    .menu-principal > ul,
+    nav.navbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .menu-principal li,
+    nav.navbar a,
+    .menu-principal a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .pagina-principal main > section,
+    .pagina-coisas .secao,
+    .pagina-atividade1 .pagina-conteudo > section,
+    .pagina-responsiva .painel-responsivo,
+    .pagina-php .php-container > section {
+        padding: 16px;
+    }
+
+    .pagina-principal article {
+        align-items: flex-start;
+    }
+
+    .pagina-caixas .caixa {
+        float: none;
+        width: calc(100% - 10px) !important;
+        height: auto !important;
+        min-height: 130px;
+    }
+
+    .pagina-responsiva .imagens-responsivas {
+        flex-direction: column;
+    }
+
+    .pagina-catalogo .media-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pagina-catalogo .card img {
+        height: auto;
+        max-height: 520px;
+    }
+
+    .pagina-catalogo .login-container {
+        margin: 35px auto;
+        padding: 24px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}

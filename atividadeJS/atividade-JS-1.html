@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1 - Soma</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body class="pagina-js">
+    <main class="painel-js">
+        <h1>Soma de Dois Números</h1>
+        <p>Ao abrir esta página, informe dois números nas caixas de diálogo.</p>
+        <a href="../atividades.html" class="btn-voltar">Voltar para Atividades</a>
+    </main>
+
+    <script>
+        function somarNumeros() {
+            const num1 = Number.parseInt(window.prompt("Digite o primeiro número:"), 10);
+            const num2 = Number.parseInt(window.prompt("Digite o segundo número:"), 10);
+
+            if (Number.isNaN(num1) || Number.isNaN(num2)) {
+                window.alert("Digite dois números inteiros válidos.");
+                return;
+            }
+
+            const resultado = num1 + num2;
+            window.alert("O resultado da soma é: " + resultado);
+        }
+
+        somarNumeros();
+    </script>
+</body>
+
+</html>

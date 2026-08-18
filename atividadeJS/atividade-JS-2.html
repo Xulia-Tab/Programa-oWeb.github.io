@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2 - Soma de Vários Números</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body class="pagina-js">
+    <main class="painel-js">
+        <h1>Somador de Números</h1>
+        <p>Clique no botão abaixo para inserir números. Digite <strong>s</strong> quando desejar encerrar.</p>
+        <button type="button" onclick="somarVariosNumeros()">Iniciar Soma</button>
+        <br>
+        <a href="../atividades.html" class="btn-voltar">Voltar para Atividades</a>
+    </main>
+
+    <script>
+        function somarVariosNumeros() {
+            const numeros = [];
+            let continuar = true;
+
+            while (continuar) {
+                const entrada = window.prompt("Digite um número para somar (ou 's' para sair):");
+
+                if (entrada === null || entrada.toLowerCase() === "s") {
+                    continuar = false;
+                } else if (entrada.trim() !== "") {
+                    const numero = Number.parseInt(entrada, 10);
+
+                    if (!Number.isNaN(numero)) {
+                        numeros.push(numero);
+                    } else {
+                        window.alert("Digite um número válido ou 's' para sair.");
+                    }
+                }
+            }
+
+            if (numeros.length === 0) {
+                window.alert("Nenhum número foi inserido.");
+                return;
+            }
+
+            let soma = 0;
+            for (let i = 0; i < numeros.length; i += 1) {
+                soma += numeros[i];
+            }
+
+            window.alert("Números digitados: " + numeros.join(", ") + "\nSoma total: " + soma);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body class="pagina-atividade1">
+    <header id="cabecalho-principal">
+        <img src="imagens/Contato.png" alt="Ícone de contato">
+        <h1>Entre em Contato</h1>
+    </header>
+
+    <nav class="navbar" aria-label="Navegação principal">
+        <a href="curriculo.html">Currículo</a>
+        <a href="../atividades.html">Voltar para Atividades</a>
+    </nav>
+
+    <main class="pagina-conteudo">
+        <section class="formulario-contato" id="contratacao">
+            <h2>Formulário de contato</h2>
+            <form>
+                <div>
+                    <label for="nomePessoa">Nome:</label>
+                    <input type="text" id="nomePessoa" name="nomePessoa" required>
+                </div>
+
+                <div>
+                    <label for="emailPessoa">E-mail:</label>
+                    <input type="email" id="emailPessoa" name="emailPessoa" required>
+                </div>
+
+                <div>
+                    <label for="telefonePessoa">Telefone:</label>
+                    <input type="tel" id="telefonePessoa" name="telefonePessoa">
+                </div>
+
+                <div>
+                    <label for="ehRecrutador">É recrutador?</label>
+                    <select id="ehRecrutador" name="ehRecrutador">
+                        <option value="nao">Não</option>
+                        <option value="sim">Sim</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" required></textarea>
+                </div>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer id="rodape">
+        <p>&copy; 2026 - Julia Oliveira Costa</p>
+    </footer>
+</body>
+
+</html>
